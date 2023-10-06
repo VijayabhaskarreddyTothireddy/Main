@@ -1,0 +1,9 @@
+{
+	"name": "adfnewdp203",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d4389275-b3f4-4238-b3f1-7fc628595ab3",
+		"tenantId": "d649f767-ecdd-4408-a2e6-d1694e37640f"
+	}
+}
