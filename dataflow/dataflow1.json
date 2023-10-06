@@ -9,29 +9,29 @@
 						"referenceName": "DS_blob_salaries",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "Salaries"
 				}
 			],
 			"sinks": [
 				{
-					"name": "sink1"
+					"name": "SQL"
 				}
 			],
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
 				"          Name as string,",
-				"          Age as string,",
+				"          Age as short,",
 				"          Job as string,",
-				"          Salary as string",
+				"          Salary as short",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 sink(allowSchemaDrift: true,",
+				"     ignoreNoFilesFound: false) ~> Salaries",
+				"Salaries sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true) ~> SQL"
 			]
 		}
 	}
