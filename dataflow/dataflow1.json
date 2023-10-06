@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DS_blob_salaries",
+						"referenceName": "DS_blob_output",
 						"type": "DatasetReference"
 					},
 					"name": "destination",
@@ -38,12 +38,6 @@
 				"     ignoreNoFilesFound: false) ~> Salaries",
 				"Salaries sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          Name as string,",
-				"          Age as string,",
-				"          Job as string,",
-				"          Salary as string",
-				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> destination"
 			]
