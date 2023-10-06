@@ -49,16 +49,7 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "input//employees.csv"
-							},
-							{
-								"name": "Destination",
-								"value": "input//EMP.csv"
-							}
-						],
+						"userProperties": [],
 						"typeProperties": {
 							"source": {
 								"type": "DelimitedTextSource",
@@ -141,7 +132,7 @@
 								"type": "DelimitedTextSource",
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
-									"fileListPath": "input",
+									"recursive": true,
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -236,6 +227,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": "employees.csv",
 						"fileSystem": "input"
 					},
 					"columnDelimiter": ",",
@@ -304,7 +296,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "employees.csv",
+						"fileName": "Sales Records.csv",
 						"fileSystem": "input"
 					},
 					"columnDelimiter": ",",
