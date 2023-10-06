@@ -5,19 +5,13 @@
 		"factoryName": {
 			"value": "adfnewdp203"
 		},
-		"LS_ADLS_accountKey": {
+		"LS_BlobStorage_connectionString": {
 			"value": ""
 		},
-		"LS_ADLS_Output_accountKey": {
+		"LS_DataLake_accountKey": {
 			"value": ""
 		},
-		"LS_blob_connectionString": {
-			"value": ""
-		},
-		"LS_ADLS_properties_typeProperties_url": {
-			"value": "https://dlnewbatchdp203.dfs.core.windows.net/"
-		},
-		"LS_ADLS_Output_properties_typeProperties_url": {
+		"LS_DataLake_properties_typeProperties_url": {
 			"value": "https://dlnewbatchdp203.dfs.core.windows.net/"
 		},
 		"containerUri": {

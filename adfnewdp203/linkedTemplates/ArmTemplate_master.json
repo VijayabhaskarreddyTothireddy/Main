@@ -7,23 +7,15 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfnewdp203"
 		},
-		"LS_ADLS_accountKey": {
+		"LS_BlobStorage_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS'"
+			"metadata": "Secure string for 'connectionString' of 'LS_BlobStorage'"
 		},
-		"LS_ADLS_Output_accountKey": {
+		"LS_DataLake_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_Output'"
+			"metadata": "Secure string for 'accountKey' of 'LS_DataLake'"
 		},
-		"LS_blob_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_blob'"
-		},
-		"LS_ADLS_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://dlnewbatchdp203.dfs.core.windows.net/"
-		},
-		"LS_ADLS_Output_properties_typeProperties_url": {
+		"LS_DataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dlnewbatchdp203.dfs.core.windows.net/"
 		},
@@ -54,20 +46,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"LS_ADLS_accountKey": {
-						"value": "[parameters('LS_ADLS_accountKey')]"
+					"LS_BlobStorage_connectionString": {
+						"value": "[parameters('LS_BlobStorage_connectionString')]"
 					},
-					"LS_ADLS_Output_accountKey": {
-						"value": "[parameters('LS_ADLS_Output_accountKey')]"
+					"LS_DataLake_accountKey": {
+						"value": "[parameters('LS_DataLake_accountKey')]"
 					},
-					"LS_blob_connectionString": {
-						"value": "[parameters('LS_blob_connectionString')]"
-					},
-					"LS_ADLS_properties_typeProperties_url": {
-						"value": "[parameters('LS_ADLS_properties_typeProperties_url')]"
-					},
-					"LS_ADLS_Output_properties_typeProperties_url": {
-						"value": "[parameters('LS_ADLS_Output_properties_typeProperties_url')]"
+					"LS_DataLake_properties_typeProperties_url": {
+						"value": "[parameters('LS_DataLake_properties_typeProperties_url')]"
 					}
 				}
 			},
