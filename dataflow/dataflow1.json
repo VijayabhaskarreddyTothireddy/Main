@@ -18,14 +18,18 @@
 						"referenceName": "DS_blob_output",
 						"type": "DatasetReference"
 					},
-					"name": "destination",
+					"name": "outputsalaries",
 					"rejectedDataLinkedService": {
 						"referenceName": "LS_BlobStorage",
 						"type": "LinkedServiceReference"
 					}
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "split1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          Name as string,",
@@ -36,10 +40,13 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> Salaries",
-				"Salaries sink(allowSchemaDrift: true,",
+				"Salaries split(Job==\"Software Engineer\"\r",
+				",",
+				"     disjoint: false) ~> split1@(Job)",
+				"split1@Job sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> destination"
+				"     skipDuplicateMapOutputs: true) ~> outputsalaries"
 			]
 		}
 	}
