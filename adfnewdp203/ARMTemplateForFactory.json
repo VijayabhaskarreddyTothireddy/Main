@@ -297,7 +297,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "Sales Records.csv",
-						"fileSystem": "input"
+						"fileSystem": "output"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
