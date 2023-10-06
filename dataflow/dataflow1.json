@@ -18,7 +18,7 @@
 						"referenceName": "DS_blob_salaries",
 						"type": "DatasetReference"
 					},
-					"name": "destinatio",
+					"name": "destination",
 					"rejectedDataLinkedService": {
 						"referenceName": "LS_BlobStorage",
 						"type": "LinkedServiceReference"
@@ -45,7 +45,7 @@
 				"          Salary as string",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> destinatio"
+				"     skipDuplicateMapOutputs: true) ~> destination"
 			]
 		}
 	}
