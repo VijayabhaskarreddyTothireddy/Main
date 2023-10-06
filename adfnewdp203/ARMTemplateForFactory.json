@@ -84,7 +84,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "SALARIES.csv",
+						"fileName": "emp_slaries.csv",
 						"container": "output"
 					},
 					"columnDelimiter": ",",
