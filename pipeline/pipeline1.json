@@ -13,14 +13,22 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "input//"
+					},
+					{
+						"name": "Destination",
+						"value": "test//"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*",
+							"fileListPath": "input",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
