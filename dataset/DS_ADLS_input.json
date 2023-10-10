@@ -24,7 +24,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "salaries.csv",
+				"fileName": "Employee.csv",
 				"fileSystem": "input"
 			},
 			"columnDelimiter": ",",
