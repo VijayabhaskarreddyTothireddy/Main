@@ -231,8 +231,14 @@
 						"referenceName": "DS_ADLS_input",
 						"type": "DatasetReference",
 						"parameters": {
-							"Salaries": "Salaries.csv",
-							"Sales data": "100 sales Data.csv"
+							"Salaries": {
+								"value": "@pipeline().parameters.Salaries",
+								"type": "Expression"
+							},
+							"Sales data": {
+								"value": "@pipeline().parameters.Sales_Data",
+								"type": "Expression"
+							}
 						}
 					}
 				],
