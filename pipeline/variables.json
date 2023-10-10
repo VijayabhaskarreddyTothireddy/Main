@@ -229,17 +229,7 @@
 				"inputs": [
 					{
 						"referenceName": "DS_ADLS_input",
-						"type": "DatasetReference",
-						"parameters": {
-							"Salaries": {
-								"value": "@pipeline().parameters.Salaries",
-								"type": "Expression"
-							},
-							"Sales data": {
-								"value": "@pipeline().parameters.Sales_Data",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [

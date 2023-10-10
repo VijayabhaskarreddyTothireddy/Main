@@ -25,10 +25,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "Salaries.csv",
-				"fileSystem": {
-					"value": "@dataset().Salaries",
-					"type": "Expression"
-				}
+				"fileSystem": "input"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
