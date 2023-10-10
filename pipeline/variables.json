@@ -260,11 +260,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "@{'Employee.csv'}//Employee.csv"
+						"value": "input//100 Sales Records.csv"
 					},
 					{
 						"name": "Destination",
-						"value": "output//EMP.csv"
+						"value": "output//Salaries.csv"
 					}
 				],
 				"typeProperties": {
@@ -339,11 +339,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "@{'Employee.csv'}//Employee.csv"
+						"value": "input//salaries.csv"
 					},
 					{
 						"name": "Destination",
-						"value": "output//EMP.csv"
+						"value": "output//Salaries.csv"
 					}
 				],
 				"typeProperties": {
