@@ -16,11 +16,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "input//100 Sales Records.csv"
+						"value": "@{'<Employee>'}//Employee.csv"
 					},
 					{
 						"name": "Destination",
-						"value": "output//Sales_Records.csv"
+						"value": "output//EMP.csv"
 					}
 				],
 				"typeProperties": {
@@ -261,7 +261,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "@{'Employee.csv'}//Employee.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "output//EMP.csv"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
@@ -331,7 +340,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "@{'Employee.csv'}//Employee.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "output//EMP.csv"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
@@ -384,20 +402,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"Sales_Records": {
-				"type": "string",
-				"defaultValue": "100 Sales Records.csv"
-			},
-			"Employee": {
-				"type": "string",
-				"defaultValue": "Employee.csv"
-			},
-			"Salaries": {
-				"type": "string",
-				"defaultValue": "Salaries.csv"
-			}
-		},
 		"annotations": []
 	}
 }
