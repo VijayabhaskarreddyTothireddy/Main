@@ -306,7 +306,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"Salaries": "Salaries.csv",
-							"Sales data": "100 sales Data.csv",
+							"Sales_data": "100 sales Data.csv",
 							"Employee": "Employee.csv"
 						}
 					}
@@ -385,7 +385,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"Salaries": "Salaries.csv",
-							"Sales data": "100 sales Data.csv",
+							"Sales_data": "100 sales Data.csv",
 							"Employee": "Employee.csv"
 						}
 					}

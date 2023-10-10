@@ -10,7 +10,7 @@
 				"type": "String",
 				"defaultValue": "Salaries.csv"
 			},
-			"Sales data": {
+			"Sales_data": {
 				"type": "String",
 				"defaultValue": "100 sales Data.csv"
 			},
@@ -24,7 +24,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Salaries.csv",
+				"fileName": "salaries.csv",
 				"fileSystem": "input"
 			},
 			"columnDelimiter": ",",
