@@ -16,7 +16,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "100 Sales Records.csv",
+				"fileName": "Salaries.csv",
 				"fileSystem": {
 					"value": "@dataset().Salaries",
 					"type": "Expression"
