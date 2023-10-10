@@ -9,6 +9,10 @@
 			"Salaries": {
 				"type": "String",
 				"defaultValue": "Salaries.csv"
+			},
+			"Sales data": {
+				"type": "String",
+				"defaultValue": "100 sales Data.csv"
 			}
 		},
 		"annotations": [],
@@ -16,9 +20,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Salaries.csv",
+				"fileName": "100 Sales Data.csv",
 				"fileSystem": {
-					"value": "@dataset().Salaries",
+					"value": "@dataset().Sales data",
 					"type": "Expression"
 				}
 			},

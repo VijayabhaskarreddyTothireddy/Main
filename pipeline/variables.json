@@ -231,7 +231,8 @@
 						"referenceName": "DS_ADLS_input",
 						"type": "DatasetReference",
 						"parameters": {
-							"Salaries": "Salaries.csv"
+							"Salaries": "Salaries.csv",
+							"Sales data": "100 sales Data.csv"
 						}
 					}
 				],
@@ -273,15 +274,41 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "DS_ADLS_input",
 						"type": "DatasetReference",
 						"parameters": {
-							"Salaries": "Salaries.csv"
+							"Salaries": "Salaries.csv",
+							"Sales data": "100 sales Data.csv"
 						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_ADLS_output",
+						"type": "DatasetReference"
 					}
 				]
 			},
