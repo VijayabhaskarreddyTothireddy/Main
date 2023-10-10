@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Slaries",
+				"name": "Salaries",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -16,11 +16,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "@{'<Employee>'}//Employee.csv"
+						"value": "input//salaries.csv"
 					},
 					{
 						"name": "Destination",
-						"value": "output//EMP.csv"
+						"value": "output//Salaries.csv"
 					}
 				],
 				"typeProperties": {
@@ -244,7 +244,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Slaries",
+						"activity": "Salaries",
 						"dependencyConditions": [
 							"Succeeded"
 						]
