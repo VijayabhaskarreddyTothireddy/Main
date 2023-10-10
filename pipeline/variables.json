@@ -229,7 +229,10 @@
 				"inputs": [
 					{
 						"referenceName": "DS_ADLS_input",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Salaries": "Salaries.csv"
+						}
 					}
 				],
 				"outputs": [

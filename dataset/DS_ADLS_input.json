@@ -5,13 +5,22 @@
 			"referenceName": "LS_DataLake",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Salaries": {
+				"type": "String",
+				"defaultValue": "Salaries.csv"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "100 Sales Records.csv",
-				"fileSystem": "input"
+				"fileSystem": {
+					"value": "@dataset().Salaries",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
