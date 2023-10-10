@@ -25,7 +25,10 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "100 Sales Records.csv",
-				"fileSystem": "input"
+				"fileSystem": {
+					"value": "@dataset().Salaries",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
