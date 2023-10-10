@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Slaries",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -243,11 +243,11 @@
 				]
 			},
 			{
-				"name": "Copy data2",
+				"name": "Sales data",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy data1",
+						"activity": "Slaries",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -262,15 +262,35 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_ADLS_input",
+						"type": "DatasetReference",
+						"parameters": {
+							"Salaries": "Salaries.csv"
+						}
+					}
+				]
 			},
 			{
 				"name": "Copy data3",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy data2",
+						"activity": "Sales data",
 						"dependencyConditions": [
 							"Succeeded"
 						]
