@@ -402,6 +402,20 @@
 				]
 			}
 		],
+		"parameters": {
+			"Sales_Data": {
+				"type": "string",
+				"defaultValue": "100 sales Data.csv"
+			},
+			"Salaries": {
+				"type": "string",
+				"defaultValue": "Salaries.csv"
+			},
+			"Employee": {
+				"type": "string",
+				"defaultValue": "Employee.csv"
+			}
+		},
 		"annotations": []
 	}
 }
