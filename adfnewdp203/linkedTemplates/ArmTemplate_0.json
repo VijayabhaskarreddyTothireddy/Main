@@ -63,6 +63,20 @@
 					"referenceName": "LS_DataLake",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"Salaries": {
+						"type": "String",
+						"defaultValue": "Salaries.csv"
+					},
+					"Sales_data": {
+						"type": "String",
+						"defaultValue": "100 sales Data.csv"
+					},
+					"Employee": {
+						"type": "String",
+						"defaultValue": "Employee.csv"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -96,6 +110,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": "Sales.csv",
 						"fileSystem": "output"
 					},
 					"columnDelimiter": ",",
@@ -189,7 +204,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy data1",
+						"name": "Salaries",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -202,11 +217,11 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "input//100 Sales Records.csv"
+								"value": "input//salaries.csv"
 							},
 							{
 								"name": "Destination",
-								"value": "output//Sales_Records.csv"
+								"value": "output//Salaries.csv"
 							}
 						],
 						"typeProperties": {
@@ -426,23 +441,183 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Sales data",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Salaries",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "input//100 Sales Records.csv"
+							},
+							{
+								"name": "Destination",
+								"value": "output//Salaries.csv"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_ADLS_input",
+								"type": "DatasetReference",
+								"parameters": {
+									"Salaries": "Salaries.csv",
+									"Sales_data": "100 sales Data.csv",
+									"Employee": "Employee.csv"
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_ADLS_output",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Employee",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Sales data",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "input//salaries.csv"
+							},
+							{
+								"name": "Destination",
+								"value": "output//Salaries.csv"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_ADLS_input",
+								"type": "DatasetReference",
+								"parameters": {
+									"Salaries": "Salaries.csv",
+									"Sales_data": "100 sales Data.csv",
+									"Employee": "Employee.csv"
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_ADLS_output",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
 					}
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
 				"parameters": {
-					"Sales_Records": {
+					"Sales_Data": {
 						"type": "string",
-						"defaultValue": "100 Sales Records.csv"
-					},
-					"Employee": {
-						"type": "string",
-						"defaultValue": "Employee.csv"
+						"defaultValue": "100 sales Data.csv"
 					},
 					"Salaries": {
 						"type": "string",
 						"defaultValue": "Salaries.csv"
+					},
+					"Employee": {
+						"type": "string",
+						"defaultValue": "Employee.csv"
 					}
 				},
 				"annotations": []
