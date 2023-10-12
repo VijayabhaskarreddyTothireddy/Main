@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "DF_Salaries",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -40,8 +40,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> Salaries",
-				"Salaries split(Job==\"Software Engineer\"\r",
-				",",
+				"Salaries split(Job==\"Software Engineer\",",
 				"     disjoint: false) ~> split1@(Job)",
 				"split1@Job sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
