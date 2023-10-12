@@ -19,22 +19,8 @@
 						"referenceName": "Copy_data_Parameters",
 						"type": "DataFlowReference",
 						"datasetParameters": {
-							"source1": {
-								"Salaries": "Salaries.csv",
-								"Sales_data": "100 sales Data.csv",
-								"Employee": "Employee.csv"
-							},
 							"sink1": {
 								"ADLS_Output": "ADLS_Output"
-							}
-						},
-						"linkedServiceParameters": {
-							"source1": {
-								"schemaLinkedService": {
-									"Salaries": "Salaries.csv",
-									"Sales_data": "100 sales Data.csv",
-									"Employee": "Employee.csv"
-								}
 							}
 						}
 					},

@@ -5,10 +5,6 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "DS_ADLS_input",
-						"type": "DatasetReference"
-					},
 					"name": "source1"
 				}
 			],
@@ -23,12 +19,8 @@
 			],
 			"transformations": [],
 			"scriptLines": [
-				"parameters{",
-				"     parameter1 as string (salaries.csv)",
-				"}",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
+				"     validateSchema: false) ~> source1",
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
