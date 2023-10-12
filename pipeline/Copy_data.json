@@ -27,6 +27,16 @@
 				}
 			}
 		],
+		"parameters": {
+			"Salaries": {
+				"type": "string",
+				"defaultValue": "Salaries.csv"
+			},
+			"Employee": {
+				"type": "string",
+				"defaultValue": "Employee"
+			}
+		},
 		"annotations": []
 	}
 }
