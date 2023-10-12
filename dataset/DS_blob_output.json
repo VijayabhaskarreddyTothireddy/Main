@@ -5,13 +5,18 @@
 			"referenceName": "LS_BlobStorage",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"ADLS_Output": {
+				"type": "String",
+				"defaultValue": "ADLS_Output"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "emp_slaries.csv",
-				"container": "output"
+				"container": "ADLS_Output"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
