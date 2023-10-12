@@ -17,7 +17,23 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "Copy_data_Parameters",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"source1": {
+								"Salaries": "Salaries.csv",
+								"Sales_data": "100 sales Data.csv",
+								"Employee": "Employee.csv"
+							}
+						},
+						"linkedServiceParameters": {
+							"source1": {
+								"schemaLinkedService": {
+									"Salaries": "Salaries.csv",
+									"Sales_data": "100 sales Data.csv",
+									"Employee": "Employee.csv"
+								}
+							}
+						}
 					},
 					"compute": {
 						"coreCount": 8,
@@ -34,7 +50,7 @@
 			},
 			"Employee": {
 				"type": "string",
-				"defaultValue": "Employee"
+				"defaultValue": "Employee.csv"
 			}
 		},
 		"annotations": []
