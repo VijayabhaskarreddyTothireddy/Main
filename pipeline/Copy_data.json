@@ -23,6 +23,9 @@
 								"Salaries": "Salaries.csv",
 								"Sales_data": "100 sales Data.csv",
 								"Employee": "Employee.csv"
+							},
+							"sink1": {
+								"ADLS_Output": "ADLS_Output"
 							}
 						},
 						"linkedServiceParameters": {
