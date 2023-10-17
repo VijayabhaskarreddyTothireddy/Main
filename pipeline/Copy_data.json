@@ -15,15 +15,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataflow": {
-						"referenceName": "Copy_data_Parameters",
-						"type": "DataFlowReference",
-						"datasetParameters": {
-							"sink1": {
-								"ADLS_Output": "ADLS_Output"
-							}
-						}
-					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
