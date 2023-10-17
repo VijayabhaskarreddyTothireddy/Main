@@ -1,0 +1,42 @@
+{
+	"name": "DS_SQLdatabase",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Firstname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lastname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Gender",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Email",
+				"type": "nvarchar"
+			},
+			{
+				"name": "IP_address",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Employee"
+		}
+	}
+}
