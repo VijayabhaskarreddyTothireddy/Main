@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DS_SQLdatabase",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -32,8 +36,22 @@
 				"     ignoreNoFilesFound: false) ~> employee",
 				"employee sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          ID as integer,",
+				"          Firstname as string,",
+				"          Lastname as string,",
+				"          Gender as string,",
+				"          Email as string,",
+				"          IP_address as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
 	}
