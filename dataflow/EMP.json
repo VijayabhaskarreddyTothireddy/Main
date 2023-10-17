@@ -18,7 +18,11 @@
 						"referenceName": "DS_SQLdatabase",
 						"type": "DatasetReference"
 					},
-					"name": "SQL"
+					"name": "SQL",
+					"rejectedDataLinkedService": {
+						"referenceName": "LS_DataLake",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [],
