@@ -1,0 +1,9 @@
+{
+	"name": "azuredatafactorlerner",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a588f34c-5407-4680-9030-537922b75d1d",
+		"tenantId": "d649f767-ecdd-4408-a2e6-d1694e37640f"
+	}
+}

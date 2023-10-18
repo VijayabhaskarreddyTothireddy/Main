@@ -1,0 +1,61 @@
+{
+	"name": "Parameters",
+	"properties": {
+		"activities": [
+			{
+				"name": "DFT_Parameters",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Parameters",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"source1": {
+								"Database": {
+									"value": "@pipeline().parameters.Database",
+									"type": "Expression"
+								},
+								"Tablename": {
+									"value": "@pipeline().parameters.Tablename",
+									"type": "Expression"
+								},
+								"schema": {
+									"value": "@pipeline().parameters.schema",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"parameters": {
+			"Database": {
+				"type": "String"
+			},
+			"Tablename": {
+				"type": "String"
+			},
+			"schema": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-18T12:46:13Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
